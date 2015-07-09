@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="百度地图,百度地图API，百度地图自定义工具，百度地图所见即所得工具" />
+    <meta name="description" content="百度地图API自定义地图，帮助用户在可视化操作下生成百度地图" />
+    <title>百度地图API自定义地图</title>
+    <!--引用百度地图API-->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+  </head>
+  
+  <body>
+    <!--百度地图容器-->
+    <div style="width:700px;height:550px;border:#ccc solid 1px;font-size:12px" id="map1"></div>
+    <div style="width:700px;height:550px;border:#ccc solid 1px;font-size:12px" id="map2"></div>
+  </body>
+  <script type="text/javascript">
+  	var mapArray =[
+  		{
+  			id:"map1",
+  			point:[108.890261,34.223714],
+  			size:18,
+  			markers:{content:"我的备注1",title:"我的标记1",imageOffset: {width:-46,height:-21},position:{lat:34.223274,lng:108.889884}}
+
+  		},
+  		{
+  			id:"map2",
+  			point:[108.890068,34.223789],
+  			size:18,
+  			markers:{content:"我的备注2",title:"我的标记2",imageOffset: {width:-46,height:-21},position:{lat:34.22411,lng:108.88974}}
+
+  		}
+
+  	];
+    function initMap(){
+    	var map = [];
+    	for (var i = 0; i < mapArray.length; i++) {
+    		map[i] = new BMap.Map(mapArray[i].id);
+    		map[i].centerAndZoom(new BMap.Point(mapArray[i].point[0],mapArray[i].point[1]),mapArray[i].size);
+    		map[i].enableScrollWheelZoom();
+		    map[i].enableKeyboard();
+		    map[i].enableDragging();
+		    map[i].enableDoubleClickZoom()
+
+
+		    var point = new BMap.Point(mapArray[i].markers.position.lng,mapArray[i].markers.position.lat);
+		    var marker = new BMap.Marker(point,{icon:new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png",new BMap.Size(20,25),{imageOffset: new BMap.Size(mapArray[i].markers.imageOffset.width,mapArray[i].markers.imageOffset.height)})});
+		    var label = new BMap.Label(mapArray[i].markers.title,{offset: new BMap.Size(25,5)});
+		    var opts = {
+	          	width: 200,
+	          	title: mapArray[i].markers.title,
+	          	enableMessage: false
+	        };
+	        var infoWindow = new BMap.InfoWindow(mapArray[i].markers.content,opts);
+	        marker.setLabel(label);
+	        addClickHandler(marker,infoWindow);
+        	map[i].addOverlay(marker);
+
+        	var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+        	map[i].addControl(navControl);
+    	};
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+    initMap();
+  </script>
+</html>
