@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+	<title>数据提交成功</title>
+	<meta name="renderer" content="webkit" />
+	<style type="text/css">
+	body{background: #f5f5f5;font-family: "Microsoft YaHei";}
+	.panel{border: 1px solid transparent;border-radius: 4px;-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);box-shadow: 0 1px 1px rgba(0,0,0,.05);}
+	.content{width:436px;height:400px;position:absolute;top: 50%;left: 50%;margin-top: -200px;margin-left: -218px;background:#fff;}
+	.panel-body{padding: 25px;}
+	.panel-title{text-align:center;margin:40px;}
+	.panel-content{text-align:center;}
+	img{vertical-align: middle;}
+	.login-btn {margin:30px;display: block;padding: 10px;text-align: center;font-size: 16px;background: #2090ff;color: #fff;border-radius: 5px;border: 1px solid #2090ee;text-decoration:none;}
+	</style>
+	<script type="text/javascript">
+		var wait = 10;
+		window.onload = function(){time('time');};
+		function time(o) {
+	        if (wait == 0) {
+	            window.location.href=('index.html')
+	        } else {
+	        	document.getElementById(o).innerHTML = wait;
+				wait--;
+	            setTimeout(function() {
+	                time(o)
+	            },
+	            1000);
+	        }
+	    }
+	</script>
+</head>
+<body>
+	<div class="panel content">
+		<div class="panel-body">
+			<h3 class="panel-title text-center margin-t-40 margin-b-46">数据提交成功</h3>
+			<div class="panel-content">
+				<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDE0IDc5LjE1Njc5NywgMjAxNC8wOC8yMC0wOTo1MzowMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozMTRmNWE0Zi01OTUwLWFlNDItYmIzNy00ZGY0M2IzNzQzMzQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MjJGNTQ1OTMyRUE2MTFFNUJDQTRDOENBQTEwQUI5OTYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjJGNTQ1OTIyRUE2MTFFNUJDQTRDOENBQTEwQUI5OTYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ZTBiNzRlOWEtY2JhMS0zYTQxLWFhZGQtYjBiZGY0N2M5ZDVlIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6YjBjYWFmNDUtMjJlZC0xMWU1LTkwZmEtYjFhMzYxYjNhYjc0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+tVl/qgAAA+lJREFUeNrkm0tIVVEUhpc3MQLNiAqsCBxVSEQPikTragYWTXwGCg2aCBXRxHk0jCBISmoYVlCYRe+oNHtIoVCUOUuIMJSKmwmRmLT+zjq30+nmeT/29Ycfj3D3PuvjvNbajxwaaKGAVMjewt7ILmEXs5exF7Dz5TcT7BR7hP2OPcjuZ/exvwYRVI7PwMvZe9i17M3sOS77+cl+zr7Cvsx+HzfgrexW9k4PkDPB32YfZz/y2lnCY/sku1cC2R0ALEmf6LtHzpWMAriI3cHuZpdTeCqXc3ZIDKEAN7CH2M0UnZolhoYggfPYbexL8gaOWoUSC2Ka6zdwAfsW+yDFT4jpHnuhX8CL5bnZTvEVvhIPJVZPwLht7rA3UPy1ln3X6nFLWDyz+PCvJ3W0TmLOcwN8gl1J6qlSYncEjNf9flJXiL3RLjAS/LOkvs5Ibm8J3CYVjeoCw0kr4Ap2DWWPasyfUzPwUco+HfkfMD7eZVkIXCZs/wC3KgTxnV0vOXS9/D+TWs3AS9jVisBOspvYnXKMv+cs2lQLYxoYHeQqAoshpKsO2+UKYxq4TmFYDBLutdG+TgfWRxdVhF3JvsaeZ6MPMBYCuJSCGYsKAxYl4VKb/YCxNBHzasgv2PTtD+A1swQWKgFw8SyBhYoTHhqrBvu7Esx1WRn9YF8wfMPnKgALzccVznfREJD7xJhDGlUAFipwO/Nww3D8SoZVRgOC7fbxsZsE8ISLhua8+60HaCvYIh/fDxMATrloiBH/XRmgKxxChwkLfQPwiIuGeEl1ZYAecgAdNiw0CuBhl43zPEBHAQsNA/iNhw7cQEcFCw0CeMBjJ06go4SF+gH8jLRlBUFDRw0Lxj4AY7VMnw8dWkHXRwhLwpjSE49OnzqdCfp6hLBpRh0YefFUwNBRwk7pub8OPEba3CqFAB02LAnbmBEYOubzSXRo41THJikEwoT9i828MO0x+T/7gFLyvBw3+1hK2tUTMiytMgPjatyn7NIOI5O5PHwgt2G2qMt8ATPVw4dcVlBxU0pYyAr4A7slC4BbhMUSWK932xWGbRcGsgsMHSZtBatq6pXYySnwpOS/rxWCRay1ErtjYOgzu4r9UhHYKomZ3ALraec2SQfjKiRMST199AoMjZO2vP9UDGFPS3Lxxc6PnYxLI0XEUt1GCmjHiUONSywHJDbyG1gXdpmspj9TLVHoInuVxOJIbmcePkohUCHJeVh6StqAf5PEQGEB6+qRSgQvjJvs6QAgp6XvpFRynl6efm/UWiHPVa3Uvl42ar0gbe0zMqbYbdTKJONWPKwywMT7Isq8Fe8TaRMC+JYGuhXvlwADAFHqABQO9JciAAAAAElFTkSuQmCC">
+				<p>
+					<span id="time">10</span>
+					秒后将自动返回首页
+				</p>
+				<p>如果系统没有反应，请点击下面的按钮</p>
+				<a class="login-btn" href="index.html">返回首页</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
