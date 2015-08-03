@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.boxs-text{border:1px solid #ccc;min-height:50px;}
+		.boxs-text span{display: inline-block;margin:6px;padding:4px;background-color: #999;border-radius:4px;}
+	</style>
+	<script type="text/javascript" src="http://libs.useso.com/js/jquery/1.9.1/jquery.js"></script>
+	<script type="text/javascript">
+	$.extend($.fn, {
+		textBoxs: function (options) {
+			var _val = ['jsj1','jsj2','jsj3'];
+			this.next().find('a').on('click', function(event) {
+				var _val = $('#aaa').val();
+				$(this).parent().remove();
+				var _id = $(this).parent().attr('id');
+				for (var i = 0; i < _val.length; i++) {
+					if(_val[i] == _id){
+						_val.splice(i,i+1);
+						$('#aaa').val(_val);
+					}
+				};
+			});
+		},
+	});
+	$(function(){
+		$('#aaa').textBoxs();
+		var aa = $('#aaa').val()
+		// console.log(aa);
+	})
+	</script>
+</head>
+<body>
+	<input type="text" id="aaa" style="display:none;" value="['jsj1','jsj2','jsj3']">
+	<div class="boxs-text" data-input="aaa">
+		<span id="jsj">计算机<a>&times;</a></span>
+		<span id="jsj1">计算机1<a>&times;</a></span>
+		<span id="jsj2">计算机2<a>&times;</a></span>
+	</div>
+</body>
+</html>
